@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -237,135 +237,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://jonathan141.github.io/2017/03/29/bbb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jonathan_Fung">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonathan141">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/29/bbb/" itemprop="url">
-                  Hexo使用小结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T18:26:48+08:00">
-                2017-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hexo使用小结"><a href="#Hexo使用小结" class="headerlink" title="Hexo使用小结"></a>Hexo使用小结</h1><h2 id="电脑环境配置"><a href="#电脑环境配置" class="headerlink" title="电脑环境配置"></a>电脑环境配置</h2><p>Hexo 是基于 Node.js 开发的一个静态博客生成器，提供本地实时预览及部署功能。<br>使用前确保电脑中以安装 <code>Node.js</code> <code>Git</code><br>基本使用方式如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cil</div></pre></td></tr></table></figure></p>
-<p>安装完成后，在指定文件夹中新建所需的文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;  <span class="comment">//初始化存放博客文件的文件夹</span></div><div class="line">cd &lt;folder&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="自动发布-Hexo-搭建的博客"><a href="#自动发布-Hexo-搭建的博客" class="headerlink" title="自动发布 Hexo 搭建的博客"></a>自动发布 Hexo 搭建的博客</h2><p>第一：先配置 <code>_config.yml</code> 文件<br><strong><em>注意：配置项与配置内容之间有一个空格，不可省略</em></strong><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &lt;name&gt;:github账号；&lt;password&gt;:密码</span></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="attr">https://&lt;name&gt;:&lt;password&gt;@github.com/&lt;name&gt;/&lt;name&gt;.github.io.git</span></div></pre></td></tr></table></figure></p>
-<p>第二：安装自动发布插件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>第三：在相应文件夹内新建md文件<br>手动创建新文件<br><code>source</code> =&gt; <code>_posts</code> =&gt; <code>xxx.md</code></p>
-<p>或使用命令行创建新文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> [layout]&lt;tilte&gt;</div></pre></td></tr></table></figure></p>
-<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <code>_config.yml</code> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用<strong>引号</strong>括起来。<br>第四：在博客文件夹根目录下使用命令一键发布<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div><div class="line"><span class="comment">//或者</span></div><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure></p>
-<p>发布可能有延时，稍加等待即可</p>
-<h2 id="相关配置和命令"><a href="#相关配置和命令" class="headerlink" title="相关配置和命令"></a>相关配置和命令</h2><p><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">配置</a><br><a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">命令</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
     
       
 
@@ -413,7 +284,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T18:26:48+08:00">
                 2017-03-29
@@ -543,7 +414,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T16:53:46+08:00">
                 2017-03-29
@@ -664,8 +535,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -678,7 +549,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -728,7 +599,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
